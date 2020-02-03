@@ -1,13 +1,14 @@
 # PHP-ja-dokumentointi
 
 ## Harjoitustehtävä
-- lisätty SQL-tietokantaan yksi kenttä ja PHP-ohjelmaan tarvittavat muutokset ko. tiedon lisäämiseksi
+- lisätty SQL-tietokantaan yksi kenttä (puhelinnumero) ja PHP-ohjelmaan tarvittavat muutokset ko. tiedon lisäämiseksi
 - estetty tyhjän työntekijän lisäys ja asetettu pakollisten tietojen tarkistus
 - korjattu työntekijän haku numerolla, jota ei ole tietokannassa (Undefined offset: 0 in...) niin että siitä annetaan ilmoitus käyttäjälle
 - näytetään kaikkien työntekijöiden tiedot JSON-muodossa sivulla tkanta
 
-## Dokumentointi
-- ohjelman tietosisältö, käyttöliittymän kuvaus, moduulikaavio ja ohjelmakoodin kommentit
+## Prototyypin dokumentointi
+- ohjelman tietosisältö ja käyttötapauksen kuvaus lomakkeella 
+- käyttöliittymän esittely, moduulikaavio ja ohjelmakoodin kommentit
 
 ## Installation
 - create folder with the name "projects" into xampp\htdocs folder
