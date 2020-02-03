@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="tyylit.css" type="text/css">
+<title>JSON-kanta</title>
+</head>
+<body>
+<h2>All employees (JSON)</h2>
+<p id="demo">
+    <textarea type='text' id='tulosalue' rows='10' cols='62'></textarea>
+</p>
+<script>
+obj = { "table":"henkilosto", "limit":10 };
+dbParam = JSON.stringify(obj);
+ xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    //pyyntö käsitelty, vastaus saatu ja serverin antama status 200
+    if (this.readyState == 4 && this.status == 200) {
+        console.log(this.responseText);
+        //sijoitetaan vastaus tulosalueeseen
+        tulosalue.textContent=this.responseText;
+
+        //json.parse muuttaa tulostekstin objektiksi
+        myObj = JSON.parse(this.responseText);
+        // var txt="";
+		// txt += "<table>" + "<tr>" + "<th>Number</th>" + "<th>First name</th>" + "<th>Last name</th>" +  "<th>Telephone</th>" + "<th>Department</th>" + "<th>Salary</th>" + "</tr>";
+		// for (x in myObj) {
+        //     txt += "<tr>" + "<td>" + myObj[x].henkiloNumero + "</td><td>" + myObj[x].etunimi + "</td><td>" + myObj[x].sukunimi + "</td><td>" + myObj[x].sukunimi + "</td><td>" + myObj[x].osasto + "</td><td>" + myObj[x].palkka + "</td></tr><br>";
+        // }
+		// txt += "</table>";
+        // document.getElementById("demo").innerHTML = txt;
+    }
+};
+xmlhttp.open("POST", "json_demo_db_post.php", true);
+ xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+</script>
+
+<a href="index.php"><button class="buttonValikko">Back to menu</button></a>
+ </body>
+</html> 
